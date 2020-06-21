@@ -1,0 +1,11 @@
+{% block body %}
+<h1> 상세 페이지^^</h1>
+<h2>{{movie.pk}}번 째 글</h2>
+<h4>제목 : {{movie.title}}</h4>
+<h5>내용 : {{movie.content}}</h5>
+<p>생성 시간 : {{movie.created_at}}</p>
+<p>수정 시간 : {{movie.updated_at}}</p>
+<a href="{% url 'movies:edit' movie.pk %}">수정</a>
+<a href="{% url 'movies:delete' movie.pk %}">삭제</a>
+<a href="{% url 'movies:index' %}">[back]</a>
+{% endblock %}

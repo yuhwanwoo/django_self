@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block body %}
+<h1>게시판</h1>
+<hr>
+<a href="{% url 'movies:new' %}">NEW</a>
+<a href="{% url 'movies:introduce' %}">introduce</a>
+
+{% for movie in movies %}
+  <a href="{% url 'movies:detail' movie.pk %}"><h3>{{movie.pk}}번 째 글</h3></a>
+  <h4>{{movie.title}}</h4>
+  <h5>{{movie.content}}</h5>
+  <hr>
+{% endfor %}
+
+{% endblock %}

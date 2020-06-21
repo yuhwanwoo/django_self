@@ -1,0 +1,12 @@
+{% block body %}
+<form action="{% url 'movies:update' movie.pk %}" method="POST">
+  {% csrf_token %}
+  {{ movie.pk }}번 째 글
+  제목 : <input type="text" name="edit_title" value="{{ movie.title }}">
+  내용 : <input type="text" name="edit_content" value="{{ movie.content }}">
+
+  <input type="submit" value="수정하기">
+</form>
+
+<a href="{% url 'movies:index' %}">[back]</a>
+{% endblock %}
